@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="movimentacoes.css">
+    <script src="movimentacoes.js" defer></script>
+    <title>Movimentações</title>
+</head>
+<body>
+    <header>
+        <h1>Gerenciamento de Movimentações</h1>
+        <a href="../index.html">Voltar para Home</a>
+    </header>
+    <section>
+        <div id="movimentacoes-list">
+            <!-- Movimentações serão listadas aqui -->
+        </div>
+        <form id="movimentacao-form">
+            <input type="text" id="tipo" placeholder="Tipo (entrada/saida)" required>
+            <input type="number" id="quantidade" placeholder="Quantidade" required>
+            <input type="number" id="produto_id" placeholder="Produto ID" required>
+            <input type="number" id="usuario_id" placeholder="Usuário ID" required>
+            <button type="submit">Adicionar Movimentação</button>
+        </form>
+    </section>
+</body>
+</html>
