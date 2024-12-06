@@ -10,12 +10,12 @@ document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('usuarioNome').textContent = `Bem-vindo(a), ${usuarioLogado.nome}!`;
 
     // Carregar as tarefas atribuídas ao usuário
-    carregarTarefas(usuarioLogado.nome);
+    carregarTarefas(usuarioLogado.usuario_id);
 });
 
-async function carregarTarefas(nomeUsuario) {
+async function carregarTarefas(usuarioId) {
     try {
-        const response = await fetch(`http://localhost:3000/api/tarefas?usuario=${encodeURIComponent(nomeUsuario)}`);
+        const response = await fetch(`http://localhost:3000/api/tarefas/listar/${usuarioId}`);
 
         if (!response.ok) {
             const errorData = await response.json();
@@ -33,9 +33,15 @@ async function carregarTarefas(nomeUsuario) {
             return;
         }
 
+        // Renderizar as tarefas na lista
         tarefas.forEach(tarefa => {
             const li = document.createElement('li');
-            li.textContent = `${tarefa.titulo}: ${tarefa.descricao}`;
+            li.innerHTML = `
+                <h3>${tarefa.titulo}</h3>
+                <p>${tarefa.descricao}</p>
+                <p><strong>Enviada por:</strong> ${tarefa.enviadaPor}</p>
+                <p><strong>Data de Vencimento:</strong> ${tarefa.data_vencimento ? new Date(tarefa.data_vencimento).toLocaleDateString() : 'Sem data de vencimento'}</p>
+            `;
             listaTarefas.appendChild(li);
         });
     } catch (error) {
