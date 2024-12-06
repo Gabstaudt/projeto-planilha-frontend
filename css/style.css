@@ -1,148 +1,246 @@
-/* Resetando alguns elementos para um design mais consistente */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Roboto', sans-serif;
-}
+/* style.css */
 
+/* Corpo e estrutura geral */
 body {
-    background-color: #F4F4F9; /* Fundo neutro para evitar cansaço visual */
-    color: #4A4A4A; /* Texto legível */
-    font-family: 'Open Sans', sans-serif;
-    line-height: 1.6;
-}
-
-header {
-    background-color: #4A90E2; /* Azul-claro para navbar */
-    padding: 15px;
-    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1); /* Sombra sutil */
-    position: fixed;
-    width: 100%;
-    top: 0;
-    z-index: 1000;
-}
-
-.navbar {
+    font-family: 'Poppins', sans-serif;
+    background-color: #F8F9F9;
+    color: #616A6B;
+    margin: 0;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    height: 100vh;
+}
+
+/* Navbar lateral */
+.navbar {
+    width: 250px;
+    background-color: #2E86C1;
+    color: #FFFFFF;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
 }
 
 .navbar-list {
     list-style: none;
-    display: flex;
-    gap: 20px;
+    padding: 0;
+}
+
+.navbar-list li {
+    margin-bottom: 20px;
 }
 
 .navbar-list li a {
     text-decoration: none;
-    color: white;
-    font-weight: bold;
+    color: #FFFFFF;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
     transition: color 0.3s;
 }
 
 .navbar-list li a:hover {
-    color: #F4F4F9; /* Suave destaque ao passar o mouse */
+    color: #AED6F1;
 }
 
+/* Informações do usuário */
 .user-info {
+    margin-top: auto;
     display: flex;
+    flex-direction: column;
     align-items: center;
-    gap: 10px;
+    gap: 15px;
 }
 
 #logout-button {
-    background-color: #FF9800; /* Cor de alerta para o botão de logout */
-    color: white;
+    background-color: #E74C3C;
+    color: #FFFFFF;
     border: none;
-    padding: 8px 16px;
-    border-radius: 5px;
+    padding: 10px 20px;
+    border-radius: 20px;
     cursor: pointer;
     transition: background-color 0.3s;
-    font-weight: bold;
 }
 
 #logout-button:hover {
-    background-color: #e68a00; /* Mais escuro ao passar o mouse */
+    background-color: #C0392B;
 }
 
+/* Conteúdo principal */
 main {
-    margin-top: 100px; /* Compensa a navbar fixa */
-    padding: 20px;
+    margin-left: 270px; /* Space for the navbar */
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
 }
 
 .intro {
+    background-color: #FFFFFF;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     text-align: center;
-    margin-bottom: 40px;
 }
 
 .intro h1 {
-    font-family: 'Poppins', sans-serif;
-    font-weight: 600;
-    color: #4A90E2;
-    margin-bottom: 10px;
+    color: #2E86C1;
+    font-weight: bold;
 }
 
-.intro p {
-    font-size: 1.1rem;
-}
-
-#usuarioNome {
-    font-family: 'Poppins', sans-serif;
-    font-weight: 600;
-    color: #4A90E2;
-    margin-bottom: 20px;
-}
-
+/* Seção de tarefas */
 #tarefas {
-    margin-top: 40px;
-}
-
-#tarefas h2 {
-    font-family: 'Poppins', sans-serif;
-    font-weight: 500;
-    color: #4A4A4A;
-    margin-bottom: 20px;
+    background-color: #FFFFFF;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 #listaTarefas {
     list-style: none;
-    display: grid;
-    gap: 15px;
+    padding: 0;
 }
 
+/* Estilo dos itens da lista de tarefas */
 #listaTarefas li {
-    background-color: white;
-    border-left: 5px solid #A2C94C; /* Verde-musgo para indicar progresso */
-    padding: 15px;
-    border-radius: 8px;
-    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
-    transition: border-color 0.3s;
+    padding: 20px;
+    border-bottom: 1px solid #DDDDDD;
+    margin-bottom: 15px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    position: relative;
 }
 
-#listaTarefas li.pendente {
-    border-left-color: #FF9800; /* Laranja para tarefas pendentes */
+/* Estilo do título da tarefa */
+#listaTarefas li h3 {
+    color: #2E86C1;
+    margin: 0;
+    font-size: 18px;
+    font-weight: bold;
 }
 
-#listaTarefas li.atrasado {
-    border-left-color: #FF0000; /* Vermelho para tarefas atrasadas */
+/* Estilo da descrição e informações adicionais */
+#listaTarefas li p {
+    margin: 0;
+    font-size: 14px;
+    color: #616A6B;
 }
 
-#listaTarefas li:hover {
-    border-left-color: #6A1B9A; /* Roxo para destaque ao passar o mouse */
+#listaTarefas li p strong {
+    color: #2E86C1;
+    font-weight: bold;
 }
 
-/* Estilização para espaçamento e layout limpo */
-section {
-    margin-bottom: 40px;
+/* Botão "Concluir Tarefa" */
+.concluir-btn {
+    background-color: #2E86C1;
+    color: #FFFFFF;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 10px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+    align-self: flex-end;
 }
 
-button {
-    border-radius: 5px;
+.concluir-btn:hover {
+    background-color: #21618C;
+    transform: scale(1.05);
 }
 
-/* Estilo para tornar os espaços mais "limpos" e fáceis de ler */
-body, input, button {
-    line-height: 1.6;
+/* Progresso das tarefas */
+#listaTarefas li .progress {
+    background-color: #82E0AA;
+    color: #FFFFFF;
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 14px;
+    position: absolute;
+    top: 10px;
+    right: 20px;
+}
+.modal {
+    display: none; /* Modal começa oculto */
+    position: fixed;
+    z-index: 1; /* Ficar acima dos outros elementos */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto; /* Habilitar rolagem se necessário */
+    background-color: rgba(0, 0, 0, 0.4); /* Fundo escurecido */
+}
+
+.modal-content {
+    background-color: #FFFFFF; /* Fundo branco do modal */
+    margin: 10% auto;
+    padding: 20px;
+    border-radius: 10px; /* Bordas arredondadas */
+    width: 50%; /* Largura do modal */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra suave */
+}
+
+.close-btn {
+    color: #4A4A4A; /* Cinza-escuro */
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close-btn:hover,
+.close-btn:focus {
+    color: #FF9800; /* Cor de alerta para hover */
+    text-decoration: none;
+}
+
+.modal h2 {
+    font-family: 'Poppins', sans-serif;
+    color: #4A90E2; /* Azul-claro */
+    margin-bottom: 15px;
+}
+
+.modal label {
+    display: block;
+    margin-top: 10px;
+    font-weight: bold;
+    color: #4A4A4A; /* Cinza-escuro */
+}
+
+.modal input[type="text"],
+.modal input[type="date"],
+.modal textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #cccccc;
+    border-radius: 5px; /* Bordas arredondadas */
+    box-sizing: border-box;
+    background-color: #F4F4F9; /* Fundo cinza-claro */
+    font-family: 'Roboto', sans-serif;
+    color: #4A4A4A; /* Cinza-escuro */
+}
+
+.modal button[type="submit"] {
+    background-color: #A2C94C; /* Verde-musgo */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px; /* Bordas arredondadas */
+    cursor: pointer;
+    margin-top: 15px;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.modal button[type="submit"]:hover {
+    background-color: #8fb838; /* Tom mais escuro de verde-musgo para hover */
 }

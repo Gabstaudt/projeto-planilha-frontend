@@ -1,21 +1,86 @@
+/* categorias.css */
+
+/* Estilo geral do corpo e navbar */
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f0f0f0;
-    color: #333;
+    font-family: 'Poppins', sans-serif;
+    background-color: #F8F9F9;
+    color: #616A6B;
+    margin: 0;
+    display: flex;
+    height: 100vh;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
 }
 
 header {
-    background-color: #FF5722;
-    color: white;
-    padding: 1em;
+    background-color: #2E86C1;
+    color: #FFFFFF;
+    padding: 20px;
+    width: 100%;
     text-align: center;
+    border-radius: 20px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
 }
 
-section {
-    padding: 2em;
+header a {
+    text-decoration: none;
+    color: #FFFFFF;
+    background-color: #AED6F1;
+    padding: 10px 20px;
+    border-radius: 10px;
+    transition: background-color 0.3s;
 }
 
-form input, form button {
-    margin: 5px 0;
-    padding: 0.5em;
+header a:hover {
+    background-color: #82E0AA;
+}
+
+/* Lista de categorias */
+#categorias-list {
+    background-color: #FFFFFF;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 800px;
+    margin-bottom: 30px;
+}
+
+/* Formulário de adicionar categoria */
+#categoria-form {
+    background-color: #FFFFFF;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 800px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+#categoria-form input {
+    padding: 15px;
+    border-radius: 10px;
+    border: 1px solid #DDDDDD;
+    width: 100%;
+}
+
+#categoria-form button {
+    align-self: flex-end;
+    background-color: #2E86C1;
+    color: #FFFFFF;
+    border: none;
+    padding: 15px 30px;
+    border-radius: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+#categoria-form button:hover {
+    background-color: #21618C;
+    transform: scale(1.05);
 }

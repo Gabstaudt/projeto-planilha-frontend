@@ -1,21 +1,99 @@
+/* movimentacoes.css */
+
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f0f0f0;
-    color: #333;
+    font-family: 'Poppins', sans-serif;
+    background-color: #F8F9F9;
+    color: #616A6B;
+    margin: 0;
+    display: flex;
+}
+
+.navbar {
+    width: 250px;
+    background-color: #2E86C1;
+    color: #FFFFFF;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-list {
+    list-style: none;
+    padding: 0;
+}
+
+.navbar-list li {
+    margin-bottom: 20px;
+}
+
+.navbar-list li a {
+    text-decoration: none;
+    color: #FFFFFF;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    transition: color 0.3s;
+}
+
+.navbar-list li a:hover {
+    color: #AED6F1;
+}
+
+main {
+    margin-left: 270px; /* Space for the navbar */
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
 }
 
 header {
-    background-color: #4CAF50;
-    color: white;
-    padding: 1em;
+    color: #FFFFFF;
+    background-color: #2E86C1;
+    padding: 20px;
     text-align: center;
+    border-radius: 20px;
 }
 
 section {
-    padding: 2em;
+    background-color: #FFFFFF;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
 }
 
-form input, form button {
-    margin: 5px 0;
-    padding: 0.5em;
+#movimentacoes-list {
+    margin-bottom: 30px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+input {
+    width: 100%;
+    padding: 15px;
+    border-radius: 10px;
+    border: 1px solid #DDDDDD;
+}
+
+button {
+    background-color: #BB8FCE;
+    color: #FFFFFF;
+    border: none;
+    padding: 15px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #9B59B6;
 }

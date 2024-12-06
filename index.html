@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,7 +7,6 @@
     <script src="js/index.js" defer></script>
     <title>Projeto Planilha - Dashboard</title>
 </head>
-
 <body>
     <header>
         <nav class="navbar">
@@ -37,7 +35,32 @@
             <h2>Tarefas Atribuídas a Você</h2>
             <ul id="listaTarefas"></ul>
         </section>
+
+        <!-- Botão para adicionar tarefa -->
+        <button id="adicionarTarefaBtn">Adicionar Tarefa</button>
+
+        <!-- Modal para adicionar tarefa -->
+        <div id="modalAdicionarTarefa" class="modal">
+            <div class="modal-content">
+                <span class="close-btn">&times;</span>
+                <h2>Adicionar Tarefa</h2>
+                <form id="formAdicionarTarefa">
+                    <label for="paraQuem">Para quem enviar:</label>
+                    <input type="text" id="paraQuem" required>
+                    
+                    <label for="dataValidade">Data de validade:</label>
+                    <input type="date" id="dataValidade" required>
+                    
+                    <label for="tituloTarefa">Título da Tarefa:</label>
+                    <input type="text" id="tituloTarefa" required>
+                    
+                    <label for="descricaoTarefa">Descrição:</label>
+                    <textarea id="descricaoTarefa" required></textarea>
+                    
+                    <button type="submit">Adicionar Tarefa</button>
+                </form>
+            </div>
+        </div>
     </main>
 </body>
-
 </html>

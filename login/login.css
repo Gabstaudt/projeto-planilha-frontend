@@ -1,6 +1,9 @@
+/* login.css */
+
 body {
     font-family: 'Poppins', sans-serif;
-    background-color: #f4f4f4;
+    background-color: #F4ECF7;
+    color: #616A6B;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -8,45 +11,48 @@ body {
     margin: 0;
 }
 
-.login-container {
-    background-color: white;
-    padding: 2em;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    width: 300px;
-    text-align: center;
+form {
+    background-color: #FFFFFF;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    width: 350px;
 }
 
-.login-container h1 {
-    margin-bottom: 1em;
+label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+    color: #616A6B;
 }
 
-input[type="text"],
-input[type="password"] {
+input {
     width: 100%;
-    padding: 10px;
-    margin-bottom: 1em;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    border: 1px solid #DDDDDD;
+    background-color: #F8F9F9;
 }
 
 button {
     width: 100%;
-    background-color: #27ae60;
-    color: white;
-    padding: 10px;
+    padding: 15px;
+    border-radius: 10px;
     border: none;
-    border-radius: 5px;
+    background-color: #2E86C1;
+    color: #FFFFFF;
+    font-weight: bold;
     cursor: pointer;
-    transition: background 0.3s;
+    transition: background-color 0.3s;
 }
 
 button:hover {
-    background-color: #2ecc71;
+    background-color: #21618C;
 }
 
-.error-message {
-    color: red;
-    font-size: 0.9em;
-    margin-top: 1em;
+#errorMessage {
+    text-align: center;
+    font-weight: bold;
+    color: #E74C3C;
 }

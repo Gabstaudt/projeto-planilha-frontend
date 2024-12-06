@@ -1,0 +1,62 @@
+/* graficos.css */
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #F8F9F9;
+    color: #616A6B;
+    margin: 0;
+    display: flex;
+}
+
+.navbar {
+    width: 250px;
+    background-color: #2E86C1;
+    color: #FFFFFF;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-list {
+    list-style: none;
+    padding: 0;
+}
+
+.navbar-list li {
+    margin-bottom: 20px;
+}
+
+.navbar-list li a {
+    text-decoration: none;
+    color: #FFFFFF;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    transition: color 0.3s;
+}
+
+.navbar-list li a:hover {
+    color: #AED6F1;
+}
+
+main {
+    margin-left: 270px; /* Space for the navbar */
+    padding: 40px;
+}
+
+.graficos {
+    background-color: #FFFFFF;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+canvas {
+    margin-top: 20px;
+}
