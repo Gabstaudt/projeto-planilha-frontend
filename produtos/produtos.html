@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,23 +8,36 @@
     <script src="produtos.js" defer></script>
     <title>Produtos</title>
 </head>
+
 <body>
     <header>
-        <h1>Gerenciamento de Produtos</h1>
-        <a href="../index.html">Voltar para Home</a>
+        <nav class="navbar">
+            <ul class="navbar-list">
+                <li><a href="../index.html">Dashboard</a></li>
+                <li><a href="produtos.html">Produtos</a></li>
+                <li><a href="../categorias/categorias.html">Categorias</a></li>
+                <li><a href="../movimentacoes/movimentacoes.html">Movimentações</a></li>
+            </ul>
+        </nav>
     </header>
-    <section>
-        <div id="produtos-list">
-            <!-- Produtos serão listados aqui -->
-        </div>
-        <form id="produto-form">
-            <input type="text" id="nome" placeholder="Nome do Produto" required>
-            <input type="number" id="preco" placeholder="Preço Unitário" required>
-            <input type="text" id="fornecedor" placeholder="Fornecedor">
-            <input type="text" id="codigo_produto" placeholder="Código do Produto">
-            <input type="number" id="categoria_id" placeholder="Categoria ID" required>
-            <button type="submit">Adicionar Produto</button>
-        </form>
-    </section>
+
+    <main>
+        <section>
+            <h1>Gerenciamento de Produtos</h1>
+            <input type="text" id="pesquisar-produto" placeholder="Pesquisar produtos..." oninput="pesquisarProduto()">
+            <div id="produtos-list">
+                <!-- Produtos serão listados aqui -->
+            </div>
+
+            <form id="produto-form">
+                <input type="text" id="nome" placeholder="Nome do Produto" required>
+                <input type="number" id="preco" placeholder="Preço Unitário" required>
+                <input type="text" id="fornecedor" placeholder="Fornecedor">
+                <input type="text" id="categoria_nome" placeholder="Nome da Categoria" required>
+                <button type="submit">Adicionar Produto</button>
+            </form>
+        </section>
+    </main>
 </body>
+
 </html>

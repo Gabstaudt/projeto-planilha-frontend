@@ -5,27 +5,37 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
-    <title>Projeto Planilha - Home</title>
+    <script src="js/index.js" defer></script>
+    <title>Projeto Planilha - Dashboard</title>
 </head>
 
 <body>
     <header>
         <nav class="navbar">
             <ul class="navbar-list">
-                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html">Dashboard</a></li>
                 <li><a href="produtos/produtos.html">Produtos</a></li>
                 <li><a href="categorias/categorias.html">Categorias</a></li>
                 <li><a href="movimentacoes/movimentacoes.html">Movimentações</a></li>
-                <li><a href="graficos/graficos.html">Gráficos</a></li>
                 <li><a href="planilhas/planilhas.html">Planilhas</a></li>
             </ul>
+            <div class="user-info">
+                <p id="user-display"></p>
+                <button id="logout-button">Logout</button>
+            </div>
         </nav>
     </header>
 
     <main>
         <section class="intro">
             <h1>Bem-vindo ao Projeto Planilha</h1>
-            <p>Gerencie seus produtos, categorias e movimentações de maneira fácil e eficaz.</p>
+            <p>Gerencie seus produtos, categorias, e movimentações de maneira intuitiva.</p>
+        </section>
+
+        <h1 id="usuarioNome"></h1>
+        <section id="tarefas">
+            <h2>Tarefas Atribuídas a Você</h2>
+            <ul id="listaTarefas"></ul>
         </section>
     </main>
 </body>

@@ -6,28 +6,109 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="planilhas.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.0/xlsx.full.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js" defer></script>
     <script src="planilhas.js" defer></script>
-    <title>Planilhas</title>
+    <title>Gerar Planilhas, Gráficos e Tarefas</title>
 </head>
 
 <body>
     <header>
         <nav class="navbar">
             <ul class="navbar-list">
-                <li><a href="../index.html">Home</a></li>
+                <li><a href="../index.html">Dashboard</a></li>
                 <li><a href="../produtos/produtos.html">Produtos</a></li>
                 <li><a href="../categorias/categorias.html">Categorias</a></li>
                 <li><a href="../movimentacoes/movimentacoes.html">Movimentações</a></li>
-                <li><a href="../graficos/graficos.html">Gráficos</a></li>
-                <li><a href="planilhas.html">Planilhas</a></li>
+                <li><a href="planilhas.html">Planilhas e Gráficos</a></li>
             </ul>
         </nav>
     </header>
 
     <main>
+        <!-- Seção de Planilhas -->
         <section class="planilhas">
-            <h1>Gerar Planilhas</h1>
+            <h1>Gerar Nova Planilha</h1>
+
+            <div class="opcoes-planilha">
+                <h3>Selecione os campos para incluir na planilha de produtos:</h3>
+                <div>
+                    <input type="checkbox" id="campo-nome" value="nome" checked>
+                    <label for="campo-nome">Nome</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="campo-preco" value="preco_unitario" checked>
+                    <label for="campo-preco">Preço Unitário</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="campo-fornecedor" value="fornecedor" checked>
+                    <label for="campo-fornecedor">Fornecedor</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="campo-categoria" value="categoria" checked>
+                    <label for="campo-categoria">Categoria</label>
+                </div>
+            </div>
+
             <button id="gerar-planilha">Gerar Planilha de Produtos</button>
+        </section>
+
+        <!-- Seção de Gráficos -->
+        <section class="graficos">
+            <h1>Gerar Gráfico</h1>
+
+            <div class="opcoes-grafico">
+                <h3>Escolha de qual tipo de dados gerar o gráfico:</h3>
+                <select id="dados-grafico">
+                    <option value="produtos">Produtos</option>
+                    <option value="movimentacoes">Movimentações</option>
+                </select>
+
+                <h3>Selecione os campos para gerar o gráfico:</h3>
+                <div>
+                    <input type="checkbox" id="grafico-nome" value="nome" checked>
+                    <label for="grafico-nome">Nome</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="grafico-preco" value="preco_unitario" checked>
+                    <label for="grafico-preco">Preço Unitário</label>
+                </div>
+            </div>
+
+            <div>
+                <label for="tipo-grafico">Selecione o tipo de gráfico:</label>
+                <select id="tipo-grafico">
+                    <option value="bar">Coluna</option>
+                    <option value="line">Linha</option>
+                    <option value="pie">Pizza</option>
+                </select>
+            </div>
+
+            <button id="gerar-grafico">Gerar Gráfico</button>
+            <div class="exportacao-grafico">
+                <button id="exportar-png">Exportar PNG</button>
+                <button id="exportar-jpg">Exportar JPG</button>
+                <button id="exportar-pdf">Exportar PDF</button>
+                <button id="apagar-grafico">Apagar Gráfico</button>
+            </div>
+        </section>
+
+        <div id="graficos-container">
+            <canvas id="graficoCanvas" width="300" height="150"></canvas>
+        </div>
+
+        <!-- Seção de Tarefas -->
+        <section class="tarefas">
+            <h1>Adicionar Tarefas</h1>
+            <form id="tarefa-form">
+                <input type="text" id="titulo-tarefa" placeholder="Título da Tarefa" required>
+                <input type="text" id="nome-usuario" placeholder="Nome do Usuário" required>
+                <textarea id="descricao-tarefa" placeholder="Descrição da Tarefa"></textarea>
+                <button type="submit">Adicionar Tarefa</button>
+            </form>
+            <div id="lista-tarefas">
+                <!-- Tarefas adicionadas aparecerão aqui -->
+            </div>
         </section>
     </main>
 </body>

@@ -1,51 +1,83 @@
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f0f0f0;
-    color: #333;
-    margin: 0;
-    padding: 0;
-}
-
+/* Navbar styles */
 .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     background-color: #333;
-    overflow: hidden;
+    padding: 1rem;
 }
 
 .navbar-list {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
+    list-style: none;
     display: flex;
-    justify-content: space-around;
+    gap: 1rem;
 }
 
 .navbar-list li {
-    display: inline;
+    margin: 0;
 }
 
 .navbar-list a {
-    color: white;
     text-decoration: none;
-    padding: 14px 20px;
-    display: block;
+    color: #fff;
+    transition: color 0.3s;
 }
 
 .navbar-list a:hover {
-    background-color: #575757;
+    color: #ffdd57;
+}
+
+/* User information section */
+.user-info {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+#user-display {
+    color: #fff;
+    font-weight: bold;
+}
+
+#logout-button {
+    background-color: #ff4b5c;
+    color: #fff;
+    border: none;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+#logout-button:hover {
+    background-color: #ff1f3a;
+}
+
+/* General styles */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
 }
 
 header {
-    background-color: #4CAF50;
-    color: white;
-    padding: 1em;
-    text-align: center;
-}
-
-main {
-    padding: 2em;
+    background-color: #444;
+    color: #fff;
+    padding: 0.5rem 0;
 }
 
 .intro {
     text-align: center;
-    padding: 2em 0;
+    padding: 2rem;
+    background-color: #fff;
+}
+
+.tarefas-section {
+    padding: 2rem;
+    background-color: #fff;
+    margin: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
