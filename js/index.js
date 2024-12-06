@@ -46,6 +46,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
+                    'Authorization': `Bearer ${usuarioLogado.token}`
                 },
                 body: JSON.stringify({
                     titulo: tituloTarefa,
@@ -72,9 +73,15 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 });
+
 async function carregarTarefas(usuarioId) {
+    const usuarioLogado = JSON.parse(localStorage.getItem('usuarioLogado'));
     try {
-        const response = await fetch(`http://localhost:3000/api/tarefas/listar/${usuarioId}`);
+        const response = await fetch(`http://localhost:3000/api/tarefas/listar/${usuarioId}`, {
+            headers: {
+                'Authorization': `Bearer ${usuarioLogado.token}`
+            }
+        });
 
         if (!response.ok) {
             const errorData = await response.json();
@@ -117,12 +124,14 @@ async function carregarTarefas(usuarioId) {
 
 async function concluirTarefa(event) {
     const tarefaId = event.target.getAttribute('data-id');
+    const usuarioLogado = JSON.parse(localStorage.getItem('usuarioLogado'));
 
     try {
         const response = await fetch(`http://localhost:3000/api/tarefas/concluir/${tarefaId}`, {
             method: 'DELETE',
             headers: {
                 'Content-Type': 'application/json',
+                'Authorization': `Bearer ${usuarioLogado.token}`
             },
         });
 
@@ -135,7 +144,6 @@ async function concluirTarefa(event) {
         console.log('Tarefa concluída e removida com sucesso.');
 
         // Recarregar as tarefas
-        const usuarioLogado = JSON.parse(localStorage.getItem('usuarioLogado'));
         carregarTarefas(usuarioLogado.usuario_id);
     } catch (error) {
         console.error('Erro ao concluir tarefa:', error);

@@ -14,9 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         // Construir o corpo da requisição dinamicamente
-        const body = {
-            senha: senha
-        };
+        const body = { senha: senha };
 
         // Verificar se o valor digitado é um email
         if (login.includes('@')) {
@@ -44,8 +42,14 @@ document.addEventListener('DOMContentLoaded', () => {
             const data = await response.json();
             console.log('Login bem-sucedido:', data);
 
-            // Salvar os dados do usuário no localStorage
-            localStorage.setItem('usuarioLogado', JSON.stringify(data.usuario));
+            // Verificar se o token está presente antes de salvar no localStorage
+            if (data.token) {
+                localStorage.setItem('usuarioLogado', JSON.stringify({ ...data.usuario, token: data.token }));
+            } else {
+                console.error('Token não recebido no login.');
+                errorMessage.textContent = 'Erro ao realizar login. Tente novamente mais tarde.';
+                return;
+            }
 
             // Redirecionar para a página principal
             window.location.href = '../index.html';
