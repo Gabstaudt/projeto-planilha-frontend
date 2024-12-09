@@ -8,19 +8,31 @@
     <title>Categorias</title>
 </head>
 <body>
-    <header>
-        <h1>Gerenciamento de Categorias</h1>
-        <a href="../index.html">Voltar para Home</a>
-    </header>
-    <section>
-        <div id="categorias-list">
-            <!-- Categorias serão listadas aqui -->
+    <nav class="navbar">
+        <ul class="navbar-list">
+            <li><a href="../index.html">Dashboard</a></li>
+            <li><a href="../produtos/produtos.html">Produtos</a></li>
+            <li><a href="../categorias/categorias.html">Categorias</a></li>
+            <li><a href="../movimentacoes/movimentacoes.html">Movimentações</a></li>
+            <li><a href="../planilhas/planilhas.html">Planilhas</a></li>
+        </ul>
+        <div class="user-info">
+            <p id="user-display"></p>
+            <button id="logout-button">Logout</button>
         </div>
-        <form id="categoria-form">
-            <input type="text" id="nome" placeholder="Nome da Categoria" required>
-            <input type="text" id="descricao" placeholder="Descrição">
-            <button type="submit">Adicionar Categoria</button>
-        </form>
-    </section>
+    </nav>
+
+    <main>
+        <section>
+            <div id="categorias-list">
+                <!-- Categorias serão listadas aqui -->
+            </div>
+            <form id="categoria-form">
+                <input type="text" id="nome" placeholder="Nome da Categoria" required>
+                <input type="text" id="descricao" placeholder="Descrição">
+                <button type="submit">Adicionar Categoria</button>
+            </form>
+        </section>
+    </main>
 </body>
 </html>

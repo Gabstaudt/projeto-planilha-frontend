@@ -8,21 +8,33 @@
     <title>Movimentações</title>
 </head>
 <body>
-    <header>
-        <h1>Gerenciamento de Movimentações</h1>
-        <a href="../index.html">Voltar para Home</a>
-    </header>
-    <section>
-        <div id="movimentacoes-list">
-            <!-- Movimentações serão listadas aqui -->
+    <nav class="navbar">
+        <ul class="navbar-list">
+            <li><a href="../index.html">Dashboard</a></li>
+            <li><a href="../produtos/produtos.html">Produtos</a></li>
+            <li><a href="../categorias/categorias.html">Categorias</a></li>
+            <li><a href="../movimentacoes/movimentacoes.html">Movimentações</a></li>
+            <li><a href="../planilhas/planilhas.html">Planilhas</a></li>
+        </ul>
+        <div class="user-info">
+            <p id="user-display"></p>
+            <button id="logout-button">Logout</button>
         </div>
-        <form id="movimentacao-form">
-            <input type="text" id="tipo" placeholder="Tipo (entrada/saida)" required>
-            <input type="number" id="quantidade" placeholder="Quantidade" required>
-            <input type="number" id="produto_id" placeholder="Produto ID" required>
-            <input type="number" id="usuario_id" placeholder="Usuário ID" required>
-            <button type="submit">Adicionar Movimentação</button>
-        </form>
-    </section>
+    </nav>
+ 
+    <main>
+        <section>
+            <div id="movimentacoes-list">
+                <!-- Movimentações serão listadas aqui -->
+            </div>
+            <form id="movimentacao-form">
+                <input type="text" id="tipo" placeholder="Tipo (entrada/saida)" required>
+                <input type="number" id="quantidade" placeholder="Quantidade" required>
+                <input type="number" id="produto_id" placeholder="Produto ID" required>
+                <input type="number" id="usuario_id" placeholder="Usuário ID" required>
+                <button type="submit">Adicionar Movimentação</button>
+            </form>
+        </section>
+    </main>
 </body>
 </html>

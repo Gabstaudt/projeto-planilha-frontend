@@ -1,58 +1,143 @@
 /* login.css */
-
 body {
+    margin: 0;
+    padding: 0;
     font-family: 'Poppins', sans-serif;
-    background-color: #F4ECF7;
-    color: #616A6B;
     display: flex;
     justify-content: center;
     align-items: center;
+    min-height: 100vh;
+    background: #000;
+    color: #fff;
+}
+
+.pagina-login {
+    display: flex;
+    width: 100%;
     height: 100vh;
-    margin: 0;
+    overflow: hidden;
 }
 
-form {
-    background-color: #FFFFFF;
+.login-container {
+    width: 50%;
     padding: 40px;
-    border-radius: 20px;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
-    width: 350px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.7), transparent);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
+    position: relative;
+}
+@keyframes typing {
+    from {
+        width: 0;
+    }
+    to {
+        width: 100%;
+    }
 }
 
-label {
-    display: block;
-    margin-bottom: 10px;
-    font-weight: bold;
-    color: #616A6B;
+@keyframes blink {
+    0% {
+        border-right-color: rgba(255, 255, 255, 0.75);
+    }
+    50% {
+        border-right-color: transparent;
+    }
+    100% {
+        border-right-color: rgba(255, 255, 255, 0.75);
+    }
 }
 
-input {
+.login-container h2 {
+    font-size: 2.5rem;
+    font-weight: 600;
+    margin-bottom: 40px; /* Espaço entre o título e os inputs */
+    color: #fff;
+    overflow: hidden; /* Esconde o texto fora da largura */
+    white-space: nowrap; /* Mantém o texto em uma linha */
+    border-right: 3px solid; /* Cria o efeito de cursor */
+    width: 0; /* Inicialmente não mostra nada */
+    animation: typing 4s steps(30, end) forwards, blink 0.7s step-end 4s; /* Para a animação */
+    animation-fill-mode: forwards; /* Mantém o estado final */
+    text-align: center; /* Centraliza o texto no elemento */
+}
+
+.login-container form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
     width: 100%;
-    padding: 15px;
-    margin-bottom: 20px;
-    border-radius: 10px;
-    border: 1px solid #DDDDDD;
-    background-color: #F8F9F9;
+    max-width: 360px;
+    align-items: center; /* Centraliza os itens */
 }
 
-button {
+@keyframes border-spin {
+    0% {
+        border-image-source: linear-gradient(45deg, #3a6e9a, #12182c, #65ceff, #3a6e9a);
+    }
+    50% {
+        border-image-source: linear-gradient(225deg, #12182c, #65ceff, #3a6e9a, #12182c);
+    }
+    100% {
+        border-image-source: linear-gradient(405deg, #65ceff, #3a6e9a, #12182c, #65ceff);
+    }
+}
+
+/* Estilo inicial com animação girando */
+.login-container input {
     width: 100%;
-    padding: 15px;
-    border-radius: 10px;
+    padding: 12px 15px;
+    border: 2px solid; /* Garante que a borda seja visível */
+    border-radius: 30px; /* Bordas arredondadas */
+    background: #181818;
+    color: #fff;
+    font-size: 1rem;
+    outline: none;
+    border-image-slice: 1; /* Permite o uso do gradiente na borda */
+    animation: border-spin 3s linear infinite; /* Borda girando continuamente */
+    transition: border 0.3s, border-radius 0.3s;
+}
+
+/* Quando em foco, a animação para e uma borda estática é aplicada */
+.login-container input:focus {
+    animation: none; /* Para a animação */
+    border-image-source: linear-gradient(to right, #3a6e9a, #12182c); /* Borda estática */
+    border: 2px solid; /* Garante a borda sólida em foco */
+    border-radius: 30px; /* Mantém bordas arredondadas */
+}
+
+
+.login-container button {
+    width: 80%; /* Ajusta o tamanho para centralização */
+    padding: 12px;
+    margin-top: 20px; /* Adiciona um espaçamento superior */
     border: none;
-    background-color: #2E86C1;
-    color: #FFFFFF;
-    font-weight: bold;
+    border-radius: 30px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    background: linear-gradient(135deg, #65ceff, #065de0);
+    color: #fff;
     cursor: pointer;
-    transition: background-color 0.3s;
+    transition: background 0.3s;
+    align-self: center; /* Centraliza o botão */
 }
 
-button:hover {
-    background-color: #21618C;
+.login-container button:hover {
+    background: linear-gradient(135deg, #065de0,  #65ceff);
 }
 
-#errorMessage {
+.error-message {
+    font-size: 0.9rem;
+    color: #ff5555;
     text-align: center;
-    font-weight: bold;
-    color: #E74C3C;
+}
+
+.lado-imagem {
+    width: 50%;
+    height: 100%;
+    background: url('image.png') no-repeat center center/cover;
+    background-blend-mode: overlay; /* Mistura a imagem com o gradiente */
+    background: linear-gradient(to left, rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.7)), url('image.png') no-repeat center center/cover;
 }

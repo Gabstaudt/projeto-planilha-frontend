@@ -1,99 +1,196 @@
-/* movimentacoes.css */
-
+/* Geral */
 body {
-    font-family: 'Poppins', sans-serif;
-    background-color: #F8F9F9;
-    color: #616A6B;
     margin: 0;
-    display: flex;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    background: #000;
+    color: #fff;
+    display: flex; /* Organiza a navbar ao lado do conteúdo */
 }
 
+/* Navbar lateral esquerda */
 .navbar {
     width: 250px;
-    background-color: #2E86C1;
-    color: #FFFFFF;
     height: 100vh;
-    position: fixed;
-    top: 0;
-    left: 0;
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
     padding: 20px;
-    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    background: linear-gradient(to bottom, #12182c, #3a6e9a);
+    box-shadow: 4px 0 15px rgba(0, 0, 0, 0.5);
+    position: fixed;
 }
 
 .navbar-list {
     list-style: none;
     padding: 0;
-}
-
-.navbar-list li {
-    margin-bottom: 20px;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
 }
 
 .navbar-list li a {
     text-decoration: none;
-    color: #FFFFFF;
-    font-weight: 600;
-    display: flex;
-    align-items: center;
-    transition: color 0.3s;
+    color: #fff;
+    font-size: 1.1rem;
+    padding: 10px 15px;
+    border-radius: 8px;
+    transition: background 0.3s, color 0.3s;
 }
 
 .navbar-list li a:hover {
-    color: #AED6F1;
+    background: rgba(255, 255, 255, 0.2);
+    color: #65ceff;
+}
+
+.user-info {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: flex-start;
+}
+
+#logout-button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 30px;
+    background: linear-gradient(135deg, #3a6e9a, #65ceff);
+    color: #fff;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background 0.3s;
+}
+
+#logout-button:hover {
+    background: linear-gradient(135deg, #65ceff, #3a6e9a);
+}
+
+/* Conteúdo principal */
+header {
+    margin-left: 270px;
+    padding: 20px 40px;
+    background: rgba(18, 24, 44, 0.85);
+    border-radius: 10px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header h1 {
+    font-size: 2rem;
+    margin: 0;
+}
+
+header a {
+    text-decoration: none;
+    color: #65ceff;
+    font-size: 1rem;
+    border: 2px solid #65ceff;
+    border-radius: 20px;
+    padding: 8px 15px;
+    transition: background 0.3s, color 0.3s;
+}
+
+header a:hover {
+    background: #65ceff;
+    color: #000;
 }
 
 main {
-    margin-left: 270px; /* Space for the navbar */
+    margin-left: 270px; /* Espaço para a navbar */
     padding: 40px;
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
+    width: calc(100% - 270px);
 }
 
-header {
-    color: #FFFFFF;
-    background-color: #2E86C1;
-    padding: 20px;
-    text-align: center;
-    border-radius: 20px;
-}
-
-section {
-    background-color: #FFFFFF;
-    padding: 30px;
-    border-radius: 20px;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
-}
-
+/* Lista de Movimentações */
 #movimentacoes-list {
-    margin-bottom: 30px;
-}
-
-form {
-    display: flex;
-    flex-direction: column;
+    margin-top: 20px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Duas colunas */
     gap: 20px;
 }
 
-input {
-    width: 100%;
-    padding: 15px;
-    border-radius: 10px;
-    border: 1px solid #DDDDDD;
+#movimentacoes-list .movimentacao-item {
+    background: rgba(18, 24, 44, 0.85);
+    padding: 15px 20px;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
-button {
-    background-color: #BB8FCE;
-    color: #FFFFFF;
+#movimentacoes-list .movimentacao-item h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+#movimentacoes-list .movimentacao-item p {
+    font-size: 1rem;
+    margin: 5px 0;
+    color: #65ceff;
+}
+
+#movimentacoes-list .movimentacao-item button {
+    margin-top: 10px;
+    padding: 8px 16px;
     border: none;
-    padding: 15px;
-    border-radius: 10px;
+    border-radius: 20px;
+    background: linear-gradient(135deg, #65ceff, #3a6e9a);
+    color: #fff;
+    font-size: 0.9rem;
     cursor: pointer;
-    transition: background-color 0.3s;
+    transition: background 0.3s;
+    align-self: flex-end;
 }
 
-button:hover {
-    background-color: #9B59B6;
+#movimentacoes-list .movimentacao-item button:hover {
+    background: linear-gradient(135deg, #3a6e9a, #65ceff);
+}
+
+/* Formulário de Movimentações */
+#movimentacao-form {
+    margin-top: 40px;
+    padding: 20px;
+    border-radius: 20px;
+    background: rgba(18, 24, 44, 0.85);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+#movimentacao-form input,
+#movimentacao-form button {
+    width: 100%;
+    padding: 12px 15px;
+    border: 2px solid transparent;
+    border-radius: 30px;
+    background: #12182c;
+    color: #fff;
+    font-size: 1rem;
+    outline: none;
+    transition: border 0.3s;
+}
+
+#movimentacao-form input:focus {
+    border: 2px solid;
+    border-image-slice: 1;
+    border-image-source: linear-gradient(to right, #65ceff, #3a6e9a);
+}
+
+#movimentacao-form button {
+    background: linear-gradient(135deg, #3a6e9a, #65ceff);
+    color: #fff;
+    font-size: 1.2rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+#movimentacao-form button:hover {
+    background: linear-gradient(135deg, #65ceff, #3a6e9a);
 }
